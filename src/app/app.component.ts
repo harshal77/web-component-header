@@ -8,10 +8,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class AppComponent {
 
   @Input() title = 'Header';
-  @Output() headerClick = new EventEmitter<string>();
+  @Input() clickCount = 0;
+  @Output() headerClick = new EventEmitter<number>();
 
   onHeaderClick() {
-    this.headerClick.emit(this.title)
+    console.log(this.clickCount + 1);
+    this.headerClick.emit(this.clickCount + 1);
   }
 
 }
