@@ -1,19 +1,15 @@
 .spacer {
-    flex: 1;
-  }
+  flex: 1;
+}
 
-  .toolbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #1976d2;
-    color: white;
-    font-weight: 600;
-    font-size: 2rem;
-    cursor: pointer;
-  }
+.toolbar {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+  font-size: 2rem;
+  cursor: pointer;
+}

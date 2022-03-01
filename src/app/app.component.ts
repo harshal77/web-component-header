@@ -11,8 +11,10 @@ export class AppComponent {
   @Input() clickCount = 0;
   @Output() headerClick = new EventEmitter<number>();
 
+  /**
+   * @description Emit event to parent when click on header component
+   */
   onHeaderClick() {
-    console.log(this.clickCount + 1);
     this.headerClick.emit(this.clickCount + 1);
   }
 

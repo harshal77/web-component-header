@@ -18,6 +18,9 @@ import { AppComponent } from './app.component';
 export class AppModule implements DoBootstrap {
 
   constructor(private injector: Injector) {
+    /**
+     * Creates a custom element class based on an Angular component using createCustomElement method
+     */
     const header = createCustomElement(AppComponent, { injector: this.injector })
     customElements.define('header-app', header);
   }
