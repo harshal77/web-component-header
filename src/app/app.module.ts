@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, DoBootstrap, Injector, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { createCustomElement } from '@angular/elements';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -10,7 +10,18 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  entryComponents: [AppComponent],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
-export class AppModule { }
+export class AppModule implements DoBootstrap {
+
+  constructor(private injector: Injector) {
+    const header = createCustomElement(AppComponent, { injector: this.injector })
+    customElements.define('header-app', header);
+  }
+
+  ngDoBootstrap() { }
+
+}
