@@ -27,11 +27,11 @@ _Below is an example of how you can instruct your audience on installing and set
    ```
 3. Create a build of Header web app
    ```sh
-  ng build  --output-hashing none
+    ng build  --output-hashing none
    ```
 4. Concate all build files ex) main, polyfills and runtime and style
    ```sh
-  node concatenate.js
+    node concatenate.js
    ```
 4. Copy both header-web-component.js and header-web-component.css and paste into container assets folder.
   
